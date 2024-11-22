@@ -1,4 +1,4 @@
-from itemadapter import ItemAdapter, is_item
+# from itemadapter import ItemAdapter, is_item
 from scrapy import signals
 
 

@@ -1,7 +1,6 @@
 [flake8]
 ignore =
     D100,
-    F401,
     F821
 disable-noqa = True
 paths =

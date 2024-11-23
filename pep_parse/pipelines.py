@@ -25,8 +25,12 @@ class PepParsePipeline:
         self.status_count = defaultdict(int)
 
     def process_item(self, item, spider):
-        """Подсчитывает количество каждого статуса PEP."""
-        self.status_count[item['status']] += 1
+        """Подсчитывает количество каждого статуса PEP, используя метод get."""
+        status = item.get('status')
+        if status:
+            self.status_count[status] += 1
+        else:
+            spider.logger.warning(f'Элемент не содержит ключ "status": {item}')
         return item
 
     def close_spider(self, spider):
